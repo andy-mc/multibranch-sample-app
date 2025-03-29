@@ -10,5 +10,13 @@ pipeline {
         echo 'oi oi andy !!'
       }
     }
+    stage('cat Readme') {
+      when {
+        branch "fix-"
+      }
+      steps {
+        sh 'cat README.md'
+      }
+    }
   }
 }
